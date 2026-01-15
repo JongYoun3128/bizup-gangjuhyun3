@@ -97,6 +97,36 @@ function fallbackKakaoShare(message) {
     closeShareModal();
 }
 
+// 인스타그램 공유
+function shareInstagram() {
+    const url = window.location.href;
+
+    // 모바일에서 인스타그램 앱으로 이동
+    if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+        )
+    ) {
+        // 인스타그램 앱 열기
+        window.location.href = "instagram://";
+
+        setTimeout(() => {
+            alert(
+                "인스타그램 앱에서 스토리나 게시물을 작성할 때\n명함 링크를 붙여넣어 주세요!\n\n링크가 클립보드에 복사되었습니다."
+            );
+            copyToClipboard(url);
+        }, 500);
+    } else {
+        // PC에서는 링크 복사
+        copyToClipboard(url);
+        alert(
+            "명함 링크가 복사되었습니다!\n인스타그램 DM이나 프로필에 붙여넣어 주세요."
+        );
+    }
+
+    closeShareModal();
+}
+
 // 라인 공유
 function shareLine() {
     const url = window.location.href;
@@ -189,6 +219,7 @@ const translations = {
         tagline: "Business & Consulting",
         save_contact: "연락처 저장",
         kakao: "카카오톡",
+        insta: "인스타그램",
         line: "라인",
         email: "이메일",
         sms: "메시지",
@@ -227,6 +258,7 @@ const translations = {
         tagline: "Business & Consulting",
         save_contact: "Save Contact",
         kakao: "KakaoTalk",
+        insta: "instagram",
         line: "LINE",
         email: "Email",
         sms: "Message",
@@ -266,6 +298,7 @@ const translations = {
         tagline: "ビジネス＆コンサルティング",
         save_contact: "連絡先を保存",
         kakao: "カカオトーク",
+        insta: "instagram",
         line: "LINE",
         email: "メール",
         sms: "メッセージ",
@@ -303,6 +336,7 @@ const translations = {
         tagline: "商务与咨询",
         save_contact: "保存联系方式",
         kakao: "KakaoTalk",
+        insta: "instagram",
         line: "LINE",
         email: "电子邮件",
         sms: "短信",
@@ -338,6 +372,7 @@ const translations = {
         tagline: "Affaires et Conseil",
         save_contact: "Enregistrer Contact",
         kakao: "KakaoTalk",
+        insta: "instagram",
         line: "LINE",
         email: "E-mail",
         sms: "Message",
@@ -377,6 +412,7 @@ const translations = {
         tagline: "Geschäft & Beratung",
         save_contact: "Kontakt speichern",
         kakao: "KakaoTalk",
+        insta: "instagram",
         line: "LINE",
         email: "E-Mail",
         sms: "Nachricht",
@@ -416,6 +452,7 @@ const translations = {
         tagline: "Negocios y Consultoría",
         save_contact: "Guardar Contacto",
         kakao: "KakaoTalk",
+        insta: "instagram",
         line: "LINE",
         email: "Correo electrónico",
         sms: "Mensaje",
@@ -454,6 +491,7 @@ const translations = {
         tagline: "Business e Consulenza",
         save_contact: "Salva Contatto",
         kakao: "KakaoTalk",
+        insta: "instagram",
         line: "LINE",
         email: "E-mail",
         sms: "Messaggio",
@@ -493,6 +531,7 @@ const translations = {
         tagline: "Negócios e Consultoria",
         save_contact: "Salvar Contato",
         kakao: "KakaoTalk",
+        insta: "instagram",
         line: "LINE",
         email: "E-mail",
         sms: "Mensagem",
@@ -532,6 +571,7 @@ const translations = {
         tagline: "Бизнес и Консалтинг",
         save_contact: "Сохранить контакт",
         kakao: "KakaoTalk",
+        insta: "instagram",
         line: "LINE",
         email: "Электронная почта",
         sms: "Сообщение",
