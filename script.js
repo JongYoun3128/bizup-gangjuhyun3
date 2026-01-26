@@ -4,7 +4,7 @@ function saveContact() {
 VERSION:3.0
 FN:강주현
 N:강;주현;;;
-ORG:ZEROKING
+ORG:POINTGROUND
 TITLE:총괄디렉터
 TEL;TYPE=CELL:010-9806-3433
 EMAIL:matching25.kor@gmail.com
@@ -18,7 +18,7 @@ END:VCARD`;
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "ZEROKING_강주현_총괄디렉터.vcf";
+    link.download = "POINTGROUND_강주현_총괄디렉터.vcf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -47,7 +47,7 @@ window.onclick = function (event) {
 
 // 카카오톡 공유
 function shareKakao() {
-    const shareUrl = "https://jongyoun3128.github.io/bizup-gangjuhyun2/";
+    const shareUrl = "https://jongyoun3128.github.io/bizup-gangjuhyun3/";
     const text = "강주현 디지털 명함";
     const message = `${text}\n${shareUrl}`;
 
@@ -85,11 +85,11 @@ function fallbackKakaoShare(message) {
     setTimeout(() => {
         if (
             confirm(
-                "카카오톡이 설치되어 있지 않거나 열 수 없습니다.\n링크를 복사하시겠습니까?"
+                "카카오톡이 설치되어 있지 않거나 열 수 없습니다.\n링크를 복사하시겠습니까?",
             )
         ) {
             copyToClipboard(
-                "https://jongyoun3128.github.io/bizup-gangjuhyun2/"
+                "https://jongyoun3128.github.io/bizup-gangjuhyun3/",
             );
         }
     }, 1000);
@@ -104,7 +104,7 @@ function shareInstagram() {
     // 모바일에서 인스타그램 앱으로 이동
     if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent
+            navigator.userAgent,
         )
     ) {
         // 인스타그램 앱 열기
@@ -112,7 +112,7 @@ function shareInstagram() {
 
         setTimeout(() => {
             alert(
-                "인스타그램 앱에서 스토리나 게시물을 작성할 때\n명함 링크를 붙여넣어 주세요!\n\n링크가 클립보드에 복사되었습니다."
+                "인스타그램 앱에서 스토리나 게시물을 작성할 때\n명함 링크를 붙여넣어 주세요!\n\n링크가 클립보드에 복사되었습니다.",
             );
             copyToClipboard(url);
         }, 500);
@@ -120,7 +120,7 @@ function shareInstagram() {
         // PC에서는 링크 복사
         copyToClipboard(url);
         alert(
-            "명함 링크가 복사되었습니다!\n인스타그램 DM이나 프로필에 붙여넣어 주세요."
+            "명함 링크가 복사되었습니다!\n인스타그램 DM이나 프로필에 붙여넣어 주세요.",
         );
     }
 
@@ -130,10 +130,10 @@ function shareInstagram() {
 // 라인 공유
 function shareLine() {
     const url = window.location.href;
-    const text = "ZEROKING 강주현 총괄디렉터의 명함입니다";
+    const text = "POINTGROUND 강주현 총괄디렉터의 명함입니다";
 
     const lineUrl = `https://line.me/R/share?text=${encodeURIComponent(
-        text + "\n" + url
+        text + "\n" + url,
     )}`;
     window.open(lineUrl, "_blank");
 
@@ -142,10 +142,10 @@ function shareLine() {
 
 // 이메일 공유
 function shareEmail() {
-    const subject = "ZEROKING - 강주현 총괄디렉터 명함";
-    const body = `ZEROKING 강주현 총괄디렉터의 명함입니다.
+    const subject = "POINTGROUND - 강주현 총괄디렉터 명함";
+    const body = `POINTGROUND 강주현 총괄디렉터의 명함입니다.
 
-회사: ZEROKING
+회사: POINTGROUND
 총괄디렉터: 강주현
 전화: 010-9806-3433
 이메일: matching25.kor@gmail.com
@@ -154,7 +154,7 @@ function shareEmail() {
 명함 보기: ${window.location.href}`;
 
     const mailtoUrl = `mailto:?subject=${encodeURIComponent(
-        subject
+        subject,
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoUrl;
 
