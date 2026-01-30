@@ -7,7 +7,7 @@ N:강;주현;;;
 ORG:POINTGROUND
 TITLE:총괄디렉터
 TEL;TYPE=CELL:010-9806-3433
-EMAIL:matching25.kor@gmail.com
+EMAIL:matching25.matching25.kor@gmail.com
 ADR;TYPE=WORK:;;벚꽃로 286 삼성리더스타워 1101호;가산동;금천구;;서울
 URL:${window.location.href}
 END:VCARD`;
@@ -148,7 +148,7 @@ function shareEmail() {
 회사: POINTGROUND
 총괄디렉터: 강주현
 전화: 010-9806-3433
-이메일: matching25.kor@gmail.com
+이메일: matching25.matching25.kor@gmail.com
 주소: 금천구 가산동 벚꽃로 286 삼성리더스타워 1101호
 
 명함 보기: ${window.location.href}`;
@@ -163,7 +163,7 @@ function shareEmail() {
 
 // 문자 메시지 공유
 function shareSMS() {
-    const text = `ZEROKING 강주현 총괄디렉터의 명함입니다.\n\n전화: 010-9806-3433\n이메일: matching25.kor@gmail.com\n\n명함 보기: ${window.location.href}`;
+    const text = `POINTGROUND 강주현 총괄디렉터의 명함입니다.\n\n전화: 010-9806-3433\n이메일: matching25.matching25.kor@gmail.com\n\n명함 보기: ${window.location.href}`;
 
     // iOS와 Android 모두 지원
     const smsUrl = `sms:?body=${encodeURIComponent(text)}`;
@@ -209,7 +209,6 @@ function fallbackCopyToClipboard(text) {
 
     document.body.removeChild(textArea);
 }
-
 // 다국어 번역 데이터
 const translations = {
     ko: {
